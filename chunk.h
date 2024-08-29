@@ -2,6 +2,7 @@
 #define clox_chunk_h
 
 #include "common.h"
+#include "value.h"
 
 // the OpCode enum is a list of all the bytecodes that the VM can execute
 typedef enum {
@@ -14,6 +15,7 @@ typedef struct {
   int count;
   int capacity;
   uint8_t* code;
+  ValueArray constants;
 } Chunk;
 
 
@@ -25,5 +27,8 @@ void writeChunk(Chunk* chunk, uint8_t byte);
 
 // free the memory used by the chunk
 void freeChunk(Chunk* chunk);
+
+// add a constant to the chunk
+int addConstant(Chunk* chunk, Value value);
 
 #endif
