@@ -1,6 +1,6 @@
 # Variables
-CC = clang
-CFLAGS = -Wall  -g
+CC = gcc
+CFLAGS = -Wall -Wextra -g
 SRC = main.c debug.c chunk.c memory.c
 TARGET = program
 
@@ -14,3 +14,4 @@ $(TARGET): $(SRC)
 # Clean up
 clean:
 	rm -f $(TARGET)
+	rm -rf $(TARGET).dSYM
