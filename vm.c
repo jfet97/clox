@@ -3,6 +3,7 @@
 #include "common.h"
 #include "vm.h"
 #include "value.h"
+#include "debug.h"
 
 // just a static instance of the VM
 VM vm;
@@ -18,6 +19,12 @@ static InterpretResult run() {
   #define READ_CONSTANT() (vm.chunk->constants.values[READ_BYTE()])
 
   while(true) {
+    #ifdef DEBUG_TRACE_EXECUTION
+    int offset = vm.ip - vm.chunk->code;
+    disassembleInstruction(vm.chunk, offset);
+    #endif
+
+
     uint8_t instruction;
     switch(instruction = READ_BYTE()) {
       case OP_RETURN:
