@@ -16,6 +16,7 @@ typedef struct {
   int count;
   int capacity;
   uint8_t* code;
+  int* lines;
   ValueArray constants;
 } Chunk;
 
@@ -24,7 +25,7 @@ typedef struct {
 void initChunk(Chunk* chunk);
 
 // append a byte to the end of the chunk
-void writeChunk(Chunk* chunk, uint8_t byte);
+void writeChunk(Chunk* chunk, uint8_t byte, int line);
 
 // free the memory used by the chunk
 void freeChunk(Chunk* chunk);
