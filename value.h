@@ -21,4 +21,6 @@ void writeValueArray(ValueArray* array, Value value);
 // free the memory used by the pool
 void freeValueArray(ValueArray* array);
 
+void printValue(Value value);
+
 #endif

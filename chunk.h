@@ -7,6 +7,7 @@
 // the OpCode enum is a list of all the bytecodes that the VM can execute
 typedef enum {
   OP_RETURN, // return from the current function
+  OP_CONSTANT, // OP_CONSTANT [idx] loads the constant value at index idx from the constant pool
 } OpCode;
 
 // it's a dynamic array
