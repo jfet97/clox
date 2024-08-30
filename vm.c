@@ -49,7 +49,8 @@ static InterpretResult run() {
     uint8_t instruction;
     switch(instruction = READ_BYTE()) {
       case OP_NEGATE: {
-        push(-pop());
+        // push(-pop());
+        *(vm.stackTop - 1) = -*(vm.stackTop - 1);
         break;
       }
       case OP_ADD: {
