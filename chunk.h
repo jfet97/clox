@@ -7,6 +7,10 @@
 // the OpCode enum is a list of all the bytecodes that the VM can execute
 typedef enum {
   OP_NEGATE, // negate the top value on the stack
+  OP_ADD, // add the top two values on the stack
+  OP_SUBTRACT, // subtract the top two values on the stack
+  OP_MULTIPLY, // multiply the top two values on the stack
+  OP_DIVIDE, // divide the top two values on the stack
   OP_CONSTANT, // OP_CONSTANT [idx] loads the constant value at index idx from the constant pool into the stack
   OP_RETURN, // return from the current function
 } OpCode;
@@ -31,7 +35,7 @@ void writeChunk(Chunk* chunk, uint8_t byte, int line);
 // free the memory used by the chunk
 void freeChunk(Chunk* chunk);
 
-// add a constant to the chunk
+// add a constant to the constant pool of the chunk, return its index
 int addConstant(Chunk* chunk, Value value);
 
 #endif

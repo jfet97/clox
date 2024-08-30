@@ -3,7 +3,7 @@
 
 #include "chunk.h"
 
-#define STACK_MAX 256
+#define STACK_MAX 1024
 
 typedef struct {
   Chunk* chunk;
