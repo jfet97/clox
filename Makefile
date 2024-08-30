@@ -1,7 +1,7 @@
 # Variables
 CC = gcc
 CFLAGS = -Wall -Wextra -g
-SRC = main.c debug.c chunk.c memory.c value.c vm.c
+SRC = main.c debug.c chunk.c memory.c value.c vm.c compiler.c scanner.c
 TARGET = program
 
 # Default target
